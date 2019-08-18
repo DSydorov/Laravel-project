@@ -25,33 +25,33 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Number Phone') }}</label>
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Number Phone') }}</label>--}}
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('Number Phone') is-invalid @enderror" value="{{ old('Number Phone') }}" required autocomplete="name" autofocus>
+{{--                            <div class="col-md-6">--}}
+{{--                                <input id="name" type="text" class="form-control @error('Number Phone') is-invalid @enderror" value="{{ old('Number Phone') }}" required autocomplete="name" autofocus>--}}
 
-                                @error('Number Phone')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+{{--                                @error('Number Phone')--}}
+{{--                                <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>--}}
 
-                            <div class="col-md-6">
-                                <input id="name" type="date" class="form-control @error('Birthday') is-invalid @enderror" value="{{ old('Birthday') }}" required autocomplete="birthday" autofocus>
+{{--                            <div class="col-md-6">--}}
+{{--                                <input id="name" type="date" class="form-control @error('Birthday') is-invalid @enderror" value="{{ old('Birthday') }}" required autocomplete="birthday" autofocus>--}}
 
-                                @error('Birthday')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+{{--                                @error('Birthday')--}}
+{{--                                <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
