@@ -1,10 +1,13 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+use App\Role;
 use App\User;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
-use App\Role;
+use Faker\Provider\ro_RO\PhoneNumber as FakerPhone;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +21,21 @@ use App\Role;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    $roleId = Role::where('name', '=', 'Customer')->first()->id;
+    $role = Role::where(
+        'name',
+        '=',
+        Config::get('constants.db.customer')
+    )->first();
+
     return [
-        'name' => $faker->name,
-        'surname' => $faker->LastName,
-        'role_id' => $roleId ? $roleId : 1,
+        'name' => $faker->firstName,
+        'surname' => $faker->lastName,
+        'role_id' => $role->id,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'birthday' =>$faker->dateTimeBetween('-70 years', '-18 years')->format('Y-m-d'),
-        'password' => $faker->password(8), // password
-        'phone' => $faker->phoneNumber,
+        'password' => $faker->password(8, 20), // password
+        'phone' => FakerPhone::tollFreePhoneNumber(),
         'remember_token' => Str::random(10),
     ];
 });
