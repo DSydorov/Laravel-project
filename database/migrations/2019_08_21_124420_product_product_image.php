@@ -13,8 +13,8 @@ class ProductProductImage extends Migration
      */
     public function up()
     {
-            if(!Schema::hasTable('product_product_images')) {
-                Schema::create('product_product_images', function (Blueprint $table) {
+            if(!Schema::hasTable('product_product_image')) {
+                Schema::create('product_product_image', function (Blueprint $table) {
                     $table->bigIncrements('id');
                     $table->unsignedBigInteger('product_id');
                     $table->unsignedBigInteger('product_image_id');
@@ -38,6 +38,6 @@ class ProductProductImage extends Migration
      */
     public function down()
     {
-        Schema::drop('product_product_images');
+        Schema::drop('product_product_image');
     }
 }

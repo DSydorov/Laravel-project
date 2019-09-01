@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
                 $table->string('city', 50);
                 $table->string('address', 50);
                 $table->float('total_prise');
+                $table->timestamps();
 
                 $table->foreign('user_id')
                     ->references('id')

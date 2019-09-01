@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
                 $table->string('description_short', 50);
                 $table->string('SKU', 35)->unique();
                 $table->float('prise');
-                $table->float('discount');
+                $table->float('discount')->nullable();
                 $table->unsignedBigInteger('in_stock_count');
                 $table->string('thumbnail')->nullable();
                 $table->timestamps();

@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\Role;
 use App\User;
+use App\Order;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -20,11 +21,11 @@ use Faker\Provider\ro_RO\PhoneNumber as FakerPhone;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker, $id_user) {
     $role = Role::where(
         'name',
         '=',
-        Config::get('constants.db.customer')
+        Config::get('constants.db.roles.customer')
     )->first();
 
     return [
